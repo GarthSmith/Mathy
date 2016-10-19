@@ -37,5 +37,27 @@ namespace Mathy
             }
             return withAnswers;
         }
+
+        /// <summary>
+        /// Attempts to fill in as many missing variables in k as possible.
+        /// </summary>
+        public static Kine3 Solve(Kine3 k)
+        {
+            // What can we solve?
+            if (!k.Time.HasValue)
+            {
+                // can we solve for time?
+                int xCount = 0;
+                if (k.InitXvelo.HasValue)
+                    xCount++;
+                if (k.FinalXvelo.HasValue)
+                    xCount++;
+                if (k.Xacc.HasValue)
+                    xCount++;
+                if (k.Xdistance.HasValue)
+                    xCount++;
+            }
+            throw new NotImplementedException();
+        }
     }
 }
